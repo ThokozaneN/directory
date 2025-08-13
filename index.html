@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hustlers' Directory | SA Businesses</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQcF7W_Zd_5xwiK0VH6WD3ODd_aF956x0&libraries=places"></script>
+</head>
+<body>
+    <!--Preloader-->
+    <div class="loader">
+        <div class="loader-circle"></div>
+        <div class="loader-text">Supporting Local Hustlers</div>
+    </div>
+
+    <!--Nav-->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">H<span>D</span></a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#directory">Directory</a>
+                <a href="#features">Features</a>
+                <a href="#about">About</a>
+                <a href="#" class="btn-login" id="loginBtn">Login</a>
+                <a href="#" class="btn-register" id="registerBtn">Register</a>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!--Hamburger-->
+    <div class="mobile-menu">
+        <a href="#home">Home</a>
+        <a href="#directory">Directory</a>
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#" class="btn-login" id="mobileLoginBtn">Login</a>
+        <a href="#" class="btn-register" id="mobileRegisterBtn">Register</a>
+    </div>
+
+    <!--Hero-->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Discover & Support <span>Local Hustlers</span></h1>
+                <p class="hero-subtitle">Connecting communities with small businesses and freelancers across South Africa. <br>Powered by FNB App Academy</p>
+                <div class="search-container">
+                    <input type="text" placeholder="Search for services, businesses or locations...">
+                    <button class="search-btn"><i class="fas fa-search"></i> Search</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" id="businessCount">0</div>
+                        <div class="stat-label">Registered Businesses</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="cityCount">0</div>
+                        <div class="stat-label">Cities Covered</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="categoryCount">0</div>
+                        <div class="stat-label">Categories</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/vendor.png" alt="Local Business" class="hero-img">
+                <div class="floating-card card-1">
+                    <div class="card-icon"><i class="fas fa-utensils"></i></div>
+                    <div class="card-content">
+                        <h4>Kota Khona</h4>
+                        <p>Fresh delicious kotas</p>
+                    </div>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="card-icon"><i class="fas fa-cut"></i></div>
+                    <div class="card-content">
+                        <h4>Herway Beauty Lounge</h4>
+                        <p>Makeup, spa, nails</p>
+                    </div>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="card-icon"><i class="fas fa-tools"></i></div>
+                    <div class="card-content">
+                        <h4>This Geek</h4>
+                        <p>Tech Repair</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Categories-->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Popular Categories</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon"><i class="fas fa-utensils"></i></div>
+                    <h3>Food & Restaurants</h3>
+                    <p>Local eateries, street food, catering</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon"><i class="fas fa-cut"></i></div>
+                    <h3>Beauty & Grooming</h3>
+                    <p>Salons, barbers, spas</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon"><i class="fas fa-tools"></i></div>
+                    <h3>Repairs & Maintenance</h3>
+                    <p>Plumbing, electrical, mechanic</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon"><i class="fas fa-paint-brush"></i></div>
+                    <h3>Art & Crafts</h3>
+                    <p>Local artisans, handmade goods, tattoos</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon"><i class="fas fa-car"></i></div>
+                    <h3>Transport</h3>
+                    <p>Taxis, deliveries, moving</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon"><i class="fas fa-laptop"></i></div>
+                    <h3>Tech Services</h3>
+                    <p>Repairs, web design, IT support</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon"><i class="fas fa-tshirt"></i></div>
+                    <h3>Fashion & Apparel</h3>
+                    <p>Tailors, dressmakers, embroidery, school uniform</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon"><i class="fas fa-hard-hat"></i></div>
+                    <h3>Construction</h3>
+                    <p>Builders, home renovations, carpentry</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Directory-->
+    <section class="directory" id="directory">
+        <div class="container">
+            <h2 class="section-title">Featured Local Businesses</h2>
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <label for="location-filter">Location:</label>
+                    <select id="location-filter">
+                        <option value="all">All Locations</option>
+                        <option value="johannesburg">Johannesburg</option>
+                        <option value="capetown">Cape Town</option>
+                        <option value="durban">Durban</option>
+                        <option value="pretoria">Pretoria</option>
+                        <option value="portelizabeth">Port Elizabeth</option>
+                        <option value="mpumalanga">Mpumalanga</option>
+                        <option value="embalenhle">Embalenhle</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="category-filter">Category:</label>
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="food">Food & Restaurants</option>
+                        <option value="beauty">Beauty & Grooming</option>
+                        <option value="repairs">Repairs & Maintenance</option>
+                        <option value="art">Art & Crafts</option>
+                        <option value="transport">Transport</option>
+                        <option value="tech">Tech Services</option>
+                        <option value="tech">Fashion & Apparel</option>
+                        <option value="tech">Construction</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="sort-by">Sort by:</label>
+                    <select id="sort-by">
+                        <option value="rating">Highest Rated</option>
+                        <option value="newest">Newest</option>
+                        <option value="popular">Most Popular</option>
+                    </select>
+                </div>
+            </div>
+            <div class="business-grid" id="businessGrid">
+                <!--Business cards loaded here via JS-->
+            </div>
+            <button class="load-more-btn" id="loadMoreBtn">Load More Businesses</button>
+        </div>
+    </section>
+
+    <!--Map-->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Find Businesses Near You</h2>
+            <div class="map-container">
+                <div id="businessMap"></div>
+                <div class="map-overlay">
+                    <h3>Discover Local Services</h3>
+                    <p>Browse businesses in your area or search for specific services</p>
+                    <button class="locate-me-btn" id="locateMeBtn"><i class="fas fa-location-arrow"></i> Locate Me</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Features-->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Why Join Hustlers' Directory?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Grow Your Business</h3>
+                    <p>Reach more customers in your community and increase your visibility</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-users"></i></div>
+                    <h3>Build Trust</h3>
+                    <p>Collect reviews and showcase your work to build credibility</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Manage your business profile on the go with our mobile-optimized platform</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-wallet"></i></div>
+                    <h3>Affordable</h3>
+                    <p>Free basic listing with optional premium features to boost your business</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-bullhorn"></i></div>
+                    <h3>Promotions</h3>
+                    <p>Run special offers and promotions to attract more customers</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-analytics"></i></div>
+                    <h3>Insights</h3>
+                    <p>Get valuable analytics about your customers and business performance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Testimonials-->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Community Says</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-content">
+                        <p>"Hustlers' Directory helped me find reliable plumbers in my area when I had an emergency. The reviews made it easy to choose who to call."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/lindo.jpg" alt="Lindo K.">
+                        <div>
+                            <h4>Lindo K.</h4>
+                            <p>Homeowner, Embalenhle</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Since listing my catering business here, I've gotten 3x more bookings. It's amazing to be part of a platform that supports small businesses."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/zinhle.jpg" alt="Zinhle N.">
+                        <div>
+                            <h4>Zinhle N.</h4>
+                            <p>Chef & Caterer, Standerton</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"As a freelancer, getting consistent work was hard. Now clients find me through Hustlers' Directory and I can focus on doing great work."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/thokozane.jpg" alt="Thokozane N.">
+                        <div>
+                            <h4>Thokozane N.</h4>
+                            <p>Web Developer, Secunda</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--CTA-->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Grow Your Business?</h2>
+                <p>Join hundreds of local hustlers who are connecting with customers in their communities</p>
+                <div class="cta-buttons">
+                    <button class="cta-btn-primary" id="ctaRegisterBtn">Register Your Business</button>
+                    <button class="cta-btn-secondary">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--About-->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">About Hustlers' Directory</h2>
+                <p>Hustlers' Directory was founded in 2025 with a simple mission: to help small businesses and freelancers in South Africa thrive by connecting them with local customers.</p>
+                <p>We believe in the power of community and the importance of supporting local entrepreneurs. Our platform makes it easy for customers to discover and support the talented hustlers in their neighborhoods.</p>
+                <div class="about-stats">
+                    <div class="about-stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">South African</div>
+                    </div>
+                    <div class="about-stat">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Support</div>
+                    </div>
+                    <div class="about-stat">
+                        <div class="stat-number">0%</div>
+                        <div class="stat-label">Commission</div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Local Market">
+            </div>
+        </div>
+    </section>
+
+    <!--Footer-->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Hustlers' Directory</h3>
+                    <p>Connecting communities with small businesses and freelancers across South Africa.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#directory">Directory</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">Food & Restaurants</a></li>
+                        <li><a href="#">Beauty & Grooming</a></li>
+                        <li><a href="#">Repairs & Maintenance</a></li>
+                        <li><a href="#">Art & Crafts</a></li>
+                        <li><a href="#">Tech Services</a></li>
+                        <li><a href="#">Fashion & Apparel</a></li>
+                        <li><a href="#">Construction</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@hustlersdirectory.co.za</li>
+                        <li><i class="fas fa-phone"></i> +27 69 807 7866</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Secunda, South Africa</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hustlers' Directory. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Login to Your Account</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn-submit">Login</button>
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="#" id="switchToRegister">Register here</a></p>
+                </div>
+                <div class="social-login">
+                    <p>Or login with:</p>
+                    <div class="social-buttons">
+                        <button type="button" class="social-btn google"><i class="fab fa-google"></i> Google</button>
+                        <button type="button" class="social-btn facebook"><i class="fab fa-facebook-f"></i> Facebook</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!--Registration Modal-->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Register Your Business</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Business Name</label>
+                    <input type="text" id="registerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPhone">Phone Number</label>
+                    <input type="tel" id="registerPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerConfirmPassword">Confirm Password</label>
+                    <input type="password" id="registerConfirmPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerCategory">Business Category</label>
+                    <select id="registerCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="food">Food & Restaurants</option>
+                        <option value="beauty">Beauty & Grooming</option>
+                        <option value="repairs">Repairs & Maintenance</option>
+                        <option value="art">Art & Crafts</option>
+                        <option value="transport">Transport</option>
+                        <option value="tech">Tech Services</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="registerLocation">Location</label>
+                    <select id="registerLocation" required>
+                        <option value="">Select Location</option>
+                        <option value="johannesburg">Johannesburg</option>
+                        <option value="capetown">Cape Town</option>
+                        <option value="durban">Durban</option>
+                        <option value="pretoria">Pretoria</option>
+                        <option value="portelizabeth">Port Elizabeth</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="agreeTerms" required>
+                    <label for="agreeTerms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                </div>
+                <button type="submit" class="btn-submit">Register</button>
+                <div class="form-footer">
+                    <p>Already have an account? <a href="#" id="switchToLogin">Login here</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!--Forgot Password Modal-->
+    <div class="modal" id="forgotPasswordModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Reset Your Password</h2>
+            <form id="forgotPasswordForm">
+                <div class="form-group">
+                    <label for="forgotEmail">Email Address</label>
+                    <input type="email" id="forgotEmail" required>
+                </div>
+                <p class="reset-instructions">Enter the email address associated with your account and we'll send you a link to reset your password.</p>
+                <button type="submit" class="btn-submit">Send Reset Link</button>
+                <div class="form-footer">
+                    <p>Remember your password? <a href="#" id="switchBackToLogin">Login here</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
